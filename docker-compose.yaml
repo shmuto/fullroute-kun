@@ -1,0 +1,13 @@
+services:
+  fullroute-kun:
+    image: fullroute-kun:latest
+    volumes:
+      - type: bind
+        source: ./gobgpd.conf
+        target: /gobgp/gobgpd.conf
+      - type: bind
+        source: ./mrtdump
+        target: /gobgp/mrtdump
+    environment:
+      GOBGPD_CONFIG: /gobgp/gobgpd.conf
+      MRT_FILE: /gobgp/mrtdump
