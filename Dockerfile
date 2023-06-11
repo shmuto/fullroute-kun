@@ -6,7 +6,7 @@ ENV GOBGPD_CONFIG="/gobgp/gobgpd.conf"
 
 WORKDIR /gobgp
 
-RUN apt-get update -y && apt-get -y install wget supervisor iproute2
+RUN apt-get update -y && apt-get -y install wget supervisor iproute2 inetutils-ping
 
 RUN wget -q https://github.com/osrg/gobgp/releases/download/v${GOBGP_VERSION}/gobgp_${GOBGP_VERSION}_linux_amd64.tar.gz -O - | tar -xz
 
