@@ -7,9 +7,13 @@ sleep 1
 
 if [ -z "$PREFIX_LIMIT" ]
 then
-  /gobgp/gobgp mrt inject global $MRT_FILE $PREFIX_LIMIT
+  gobgp mrt inject global $MRT_FILE
 else
-  /gobgp/gobgp mrt inject global $MRT_FILE
+  gobgp mrt inject global $MRT_FILE $PREFIX_LIMIT
 fi
+
+gobgp completion bash > /usr/share/bash-completion/completions/gobgp
+
+echo ". /etc/bash_completion" >> ~/.bashrc
 
 fg %1
