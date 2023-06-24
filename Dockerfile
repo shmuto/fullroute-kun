@@ -1,7 +1,6 @@
 FROM ubuntu:latest
 
 ENV GOBGP_VERSION="3.15.0"
-ENV MRT_FILE="/gobgp/mrtdump"
 ENV GOBGPD_CONFIG="/gobgp/gobgpd.conf"
 
 WORKDIR /gobgp
