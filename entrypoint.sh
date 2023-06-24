@@ -5,11 +5,29 @@ gobgpd -f $GOBGPD_CONFIG &
 
 sleep 1
 
-if [ -z "$PREFIX_LIMIT" ]
+
+if [ -z "$MRT_FILE" ]
 then
-  gobgp mrt inject global $MRT_FILE
+  echo "\$MRT_FILE is not set"
 else
-  gobgp mrt inject global $MRT_FILE $PREFIX_LIMIT
+  COMMAND="gobgp mrt inject global $MRT_FILE"
+
+  if [ -z "$PREFIX_LIMIT" ]
+  then
+    echo "\$PREFIX_LIMIT is not set"
+  else
+    COMMAND="$COMMAND $PREFIX_LIMIT"
+  fi
+
+  if [ -z "$INJECT_OPTION" ]
+  then
+    echo "\$INJECT_OPTION is not set"
+  else
+    COMMAND="$COMMAND $INJECT_OPTION"
+  fi
+ 
+  $COMMAND 
+
 fi
 
 gobgp completion bash > /usr/share/bash-completion/completions/gobgp

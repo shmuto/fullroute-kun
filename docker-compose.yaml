@@ -12,3 +12,4 @@ services:
       GOBGPD_CONFIG: /gobgp/gobgpd.conf
       MRT_FILE: /gobgp/mrtdump
       PREFIX_LIMIT: 100000
+      INJECT_OPTION: --nexthop 1.1.1.1 --no-ipv6
