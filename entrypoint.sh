@@ -5,7 +5,6 @@ gobgpd -f $GOBGPD_CONFIG &
 
 sleep 1
 
-
 if [ -z "$MRT_FILE" ]
 then
   echo "\$MRT_FILE is not set"
@@ -26,7 +25,7 @@ else
     COMMAND="$COMMAND $INJECT_OPTION"
   fi
  
-  $COMMAND 
+  $COMMAND
 
 fi
 
