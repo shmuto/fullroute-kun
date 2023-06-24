@@ -11,3 +11,4 @@ services:
     environment:
       GOBGPD_CONFIG: /gobgp/gobgpd.conf
       MRT_FILE: /gobgp/mrtdump
+      PREFIX_LIMIT: 100000
