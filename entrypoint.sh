@@ -25,7 +25,7 @@ else
     COMMAND="$COMMAND $INJECT_OPTION"
   fi
  
-  $COMMAND
+  eval $COMMAND
 
 fi
 

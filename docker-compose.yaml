@@ -11,5 +11,5 @@ services:
     environment:
       GOBGPD_CONFIG: /gobgp/gobgpd.conf
       MRT_FILE: /gobgp/mrtdump
-      PREFIX_LIMIT: 100000
+      PREFIX_LIMIT: 1000
       INJECT_OPTION: --nexthop 1.1.1.1 --no-ipv6
